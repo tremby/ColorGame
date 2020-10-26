@@ -41,7 +41,8 @@ function reset()
 	}
 	else
 		squares[i].style.display = "none";
-	h1.style.backgroundColor = "steelblue";
+	h1.style.backgroundColor = "";
+	h1.style.color = "";
 }
 
 resetButton.addEventListener("click",function(){
@@ -59,6 +60,9 @@ for(var i = 0;i < colors.length;i++)
 			resetButton.textContent = "Play Again ?";
 			changeColors(pickedColor);
 			h1.style.backgroundColor = clickedColor;
+			if(colorIsBright(clickedColor)) {
+				h1.style.color = "black";
+			}
 		}
 		else
 		{
@@ -93,4 +97,11 @@ function RandomColor(){
 	var g = Math.floor(Math.random()*256);
 	var b = Math.floor(Math.random()*256);
 	return "rgb("+r+", "+g+", "+b+")";
+}
+
+function colorIsBright(colorStr) {
+	return Array.from(colorStr.matchAll(/(\d+)/g))
+		.reduce(function (total, numstr) {
+			return total + parseInt(numstr, 10);
+		}, 0) / (255 * 3) > 0.7;
 }
