@@ -2,6 +2,10 @@ body{
 	background-color: #232323;
 	margin: 0;
 	font-family: Montserrat, sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-size: 16px;
 }
 h1{
 	color: white;
@@ -12,8 +16,13 @@ h1{
 	text-transform: uppercase;
 	line-height: 1.1;
 	padding: 13px 0;
-	font-size: 40px;
+	font-size: 1.5rem;
 	transition: background 0.5s;
+}
+@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 2.5rem;
+	}
 }
 button{
 	appearance: none;
@@ -22,25 +31,22 @@ button{
 }
 .square{
 	background-color: transparent;
-	width : 30%;
-	height: 10%;
-	padding-bottom: 25%;
-	float: left;
-	margin: 1.66%;
-	border-radius: 25%;
+	border-radius: 2vmin;
 	transition: background 0.5s;
 }
 #message{
 	display: inline-block;
-	width: 30%;
 	color: #3D069B;
-	letter-spacing: 1px;
+	letter-spacing: 0.0625em;
 	font-weight: 500;
-	padding-left: 5%;
+	margin-left: 1rem;
 }
 #container{
-	max-width: 600px;
-	margin: 13px auto;
+	flex: auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 1rem;
+	grid-gap: 1rem;
 }
 #container button:focus{
 	outline: 0;
@@ -48,9 +54,12 @@ button{
 }
 #strip{
 	background: white;
-	height: 30px;
 	color: steelblue;
 	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
 }
 #strip button{
 	background: none;
@@ -58,10 +67,14 @@ button{
 	border-style: none;
 	text-transform: uppercase;
 	font-weight: 700;
-	letter-spacing: 1px;
+	letter-spacing: 0.0625em;
 	font-size: inherit;
 	color: inherit;
 	transition: background 0.5s, color 0.5s;
+	padding: 0.3em;
+}
+#difficulty {
+	min-height: 100%;
 }
 #strip button:hover, #strip button.selected{
 	color: white;
