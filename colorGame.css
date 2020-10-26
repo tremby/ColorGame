@@ -14,6 +14,11 @@ h1{
 	padding: 13px 0;
 	font-size: 40px;
 }
+button{
+	appearance: none;
+	background: none;
+	border-style: none;
+}
 .square{
 	background-color: red;
 	width : 30%;
@@ -38,32 +43,34 @@ h1{
 	max-width: 600px;
 	margin: 13px auto;
 }
+#container button:focus{
+	outline: 0;
+	box-shadow: 0 0 0 5px white;
+}
 #strip{
 	background: white;
 	height: 30px;
 	text-align: center;
 }
-button{
-	border: none;
+#strip button{
 	background: none;
 	height: 100%;
+	border-style: none;
 	text-transform: uppercase;
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: inherit;
 	color: steelblue;
-	transition: all 0.4s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	outline: none;
+	transition: background 0.4s, color 0.4s;
+	-webkit-transition: background 0.5s, color 0.5s;
+	-moz-transition: background 0.5s, color 0.5s;
 }
-button:hover{
+#strip button:hover, #strip button.selected{
 	color: white;
 	background-color: steelblue;
 }
-.selected{
-	color: white;
-	background-color: steelblue;
+#strip button:focus{
+	outline: 2px solid black;
 }
 #colorDisplay{
 	font-size: 200%;
