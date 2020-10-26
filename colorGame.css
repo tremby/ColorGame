@@ -20,7 +20,7 @@ button{
 	border-style: none;
 }
 .square{
-	background-color: red;
+	background-color: transparent;
 	width : 30%;
 	height: 10%;
 	padding-bottom: 25%;

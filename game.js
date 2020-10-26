@@ -36,12 +36,12 @@ function reset()
 	for(var i = 0;i < squares.length;i++)
 	if(colors[i])
 	{
-		squares[i].style.display = "block";
+		squares[i].style.display = "";
 		squares[i].style.backgroundColor = colors[i];
 	}
 	else
 		squares[i].style.display = "none";
-	h1.style.backgroundColor = "steelblue";
+	h1.style.backgroundColor = "";
 }
 
 resetButton.addEventListener("click",function(){
@@ -62,7 +62,7 @@ for(var i = 0;i < colors.length;i++)
 		}
 		else
 		{
-			this.style.backgroundColor = "#232323";
+			this.style.backgroundColor = "";
 			messageDisplay.textContent = "TRY AGAIN !";
 		}
 	})
