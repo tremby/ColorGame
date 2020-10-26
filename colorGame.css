@@ -49,6 +49,7 @@ button{
 #strip{
 	background: white;
 	height: 30px;
+	color: steelblue;
 	text-align: center;
 }
 #strip button{
@@ -59,7 +60,7 @@ button{
 	font-weight: 700;
 	letter-spacing: 1px;
 	font-size: inherit;
-	color: steelblue;
+	color: inherit;
 	transition: background 0.5s, color 0.5s;
 }
 #strip button:hover, #strip button.selected{
